@@ -2,15 +2,14 @@ var Bike = require('./../js/bike.js').bikeModule;
 
 var displayBikes = function(bikes) {
   bikes.forEach(function(bike) {
-    $('#listOfbikes').append("<li>" + bike.title + "</li>");
+    // $('#listOfbikes').append("<li>" + bike.title + "</li>");
     if (bike.thumb === null) {
-      $('#listOfbikes').append("<p>Sorry, there is no image for this bike. Here's a dog instead.<p><img src='img/norman.png'>");
+      $('.carousel-inner').append("<div class='item'><img src='img/norman.png'> <div class='carousel-caption'>" + bike.title + "<p>Sorry, no picture of this bike.</p><p>Enjoy a dog on a bike on instead.</p></div></div>")
     } else {
-      $('#listOfbikes').append("<img src='" + bike.thumb + "'>");
+      $('.carousel-inner').append("<div class='item'><img src='" + bike.thumb + "'> <div class='carousel-caption'>" + bike.title + "</div></div>");
     }
   });
 };
-
 
 $(document).ready(function() {
   var bike = new Bike();
