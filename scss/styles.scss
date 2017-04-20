@@ -2,6 +2,10 @@ img {
  margin: auto;
 }
 
+.bodyContent {
+  margin-top: 350px;
+}
+
 li {
   font-size: 30px;
 }
@@ -23,11 +27,37 @@ li {
   width: 100%;
 }
 
-#hamburglar img {
-  display: block;
-  margin: auto;
+#hamburglar {
+  width: 200px;
+  height: 500px;
+  position: absolute;
+  // /* Standard syntax*/
+  // animation-duration: 5s;
+  animation: pulse 5s infinite;
+  animation-name: slidein;
+  z-index: -1;
 }
+
+       @keyframes slidein {
+        0% {
+             margin-left: 100%;
+
+         }
+
+       70% {
+           margin-left: 20%;
+
+       }
+
+       80% {
+         margin-left: 29%;
+       }
+     }
 
 #carousel-example-generic {
   display: none;
+}
+
+h1 {
+  text-align: center;
 }
