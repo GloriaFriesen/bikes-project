@@ -2,7 +2,6 @@ var Bike = require('./../js/bike.js').bikeModule;
 
 var displayBikes = function(bikes) {
   bikes.forEach(function(bike) {
-    // $('#listOfbikes').append("<li>" + bike.title + "</li>");
     if (bike.thumb === null) {
       $('.carousel-inner').append("<div class='item'><img src='img/norman.png'> <div class='carousel-caption'>" + bike.title + "<p>Sorry, no picture of this bike.</p><p>Enjoy a dog on a bike on instead.</p></div></div>")
     } else {
@@ -13,8 +12,9 @@ var displayBikes = function(bikes) {
 
 $(document).ready(function() {
   var bike = new Bike();
-  $('#bikeForm').submit(function() {
-    event.preventDefault();
+  $('#bikes').click(function() {
     bike.getBikes(displayBikes);
+    $('#carousel-example-generic').show();
+    $('#bikes').hide();
   });
 });
